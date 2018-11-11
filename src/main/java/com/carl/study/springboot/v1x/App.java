@@ -2,6 +2,7 @@ package com.carl.study.springboot.v1x;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,8 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * Hello world!
  */
-@EnableAutoConfiguration //允许应用根据类路径下的jar包，自动配置项目
-@ComponentScan
+//@EnableAutoConfiguration //允许应用根据类路径下的jar包，自动配置项目
+//@ComponentScan
+@SpringBootApplication
 public class App {
   public static void main(String[] args) {
 
