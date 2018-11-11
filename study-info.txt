@@ -1,0 +1,1 @@
+资源文件目录：/static （/public ， /resources 或 /META-INF/resources ）

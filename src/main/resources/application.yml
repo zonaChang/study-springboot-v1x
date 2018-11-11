@@ -1,0 +1,20 @@
+#1. 不同环境的配置均会继承该配置中的内容
+#
+#
+#
+#
+#
+#
+#设置要激活的环境，  java -jar xxxxx.jar   --spring.profiles.active=dev
+spring:
+  profiles:
+    active: dev
+  # aop需要配置该变量， 默认使用的jdk代理
+  aop:
+    proxy-target-class: true
+
+#配置项目中的变量， 也可映射到实体bean中
+student:
+  name: xxx
+  age: 20
+  className: xx年级xx班级
