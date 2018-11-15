@@ -20,6 +20,6 @@ spring:
     #db2
     db2:
       driver-class-name: oracle.jdbc.driver.OracleDriver
-      url: jdbc:oracle:thin:@28.163.0.27:1521:devxfkhdb
-      username: xfkh
-      password: liulaoshi#haoren
+      url: jdbc:oracle:thin:@28.163.0.20:1521:devdb
+      username: khname
+      password: pass#word
