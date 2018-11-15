@@ -1,4 +1,4 @@
-package com.carl.study.springboot.v1x.model;
+package com.carl.study.springboot.v1x.model.model1;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

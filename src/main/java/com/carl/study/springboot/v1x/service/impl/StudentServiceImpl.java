@@ -1,6 +1,6 @@
 package com.carl.study.springboot.v1x.service.impl;
 
-import com.carl.study.springboot.v1x.model.Student;
+import com.carl.study.springboot.v1x.model.model1.Student;
 import com.carl.study.springboot.v1x.service.StudentService;
 import org.springframework.stereotype.Service;
 

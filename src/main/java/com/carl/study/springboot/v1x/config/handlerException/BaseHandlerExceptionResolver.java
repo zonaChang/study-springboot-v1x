@@ -23,7 +23,6 @@ public class BaseHandlerExceptionResolver implements HandlerExceptionResolver{
 
     System.out.println("occur exception, into baseHandlerExceptionResolver");
     e.printStackTrace();
-
     Map<String, Object> errMap = new HashMap<>();
     errMap.put("errNo", -1);
     errMap.put("errInfo", e.getMessage());

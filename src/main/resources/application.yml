@@ -13,8 +13,14 @@ spring:
   aop:
     proxy-target-class: true
 
+#添加日志配置
+logging:
+  level: info
+  file: log/logx.log
+
 #配置项目中的变量， 也可映射到实体bean中
 student:
   name: xxx
   age: 20
   className: xx年级xx班级
+

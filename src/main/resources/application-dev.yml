@@ -7,3 +7,19 @@ server:
 
 yml:
   key: yml-value-dev
+
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    #db1
+    db1:
+      driver-class-name: oracle.jdbc.driver.OracleDriver
+      url: jdbc:oracle:thin:@127.0.0.1:1521:orcl
+      username: scott
+      password: tiger
+    #db2
+    db2:
+      driver-class-name: oracle.jdbc.driver.OracleDriver
+      url: jdbc:oracle:thin:@28.163.0.27:1521:devxfkhdb
+      username: xfkh
+      password: liulaoshi#haoren

@@ -1,6 +1,6 @@
 package com.carl.study.springboot.v1x.controller;
 
-import com.carl.study.springboot.v1x.model.Student;
+import com.carl.study.springboot.v1x.model.model1.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
