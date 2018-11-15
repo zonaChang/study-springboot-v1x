@@ -26,12 +26,14 @@ public class BootWebConfig extends WebMvcConfigurerAdapter{
 
   @Override
   public void addInterceptors(InterceptorRegistry registry) {
+
     System.out.println("baseHandlerInterceprot add to configuration");
     registry.addInterceptor(baseHandlerInterceptor).addPathPatterns("/**");
   }
 
   @Override
   public void configureHandlerExceptionResolvers(List<HandlerExceptionResolver> exceptionResolvers) {
+
     exceptionResolvers.add(baseHandlerExceptionResolver);
   }
 }

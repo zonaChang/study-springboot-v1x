@@ -3,6 +3,7 @@ package com.carl.study.springboot.v1x.controller;
 import com.carl.study.springboot.v1x.mapper.mapperDB1.StudentMapper;
 import com.carl.study.springboot.v1x.mapper.mapperDB2.KHInfoMapper;
 import com.carl.study.springboot.v1x.model.model2.KHInfo;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/api/boot/db/")
+@Slf4j
 public class DBController {
 
   @Autowired
@@ -23,12 +25,20 @@ public class DBController {
   private KHInfoMapper khInfoMapper;
 
   @RequestMapping("db1")
-  public Object getObjectByDB1Key(int id){
+  public Object getObjectByDB1Key(int id) {
 
     return studentMapper.getStudentById(id);
   }
+
+  @RequestMapping("db1Model2")
+  public Object getObjectByDB1Model2Key(int id) {
+
+    log.info("db1 model2");
+    return studentMapper.getKHInfoById(id);
+  }
+
   @RequestMapping("db2")
-  public Object getObjectByDB2Key(int id){
+  public Object getObjectByDB2Key(int id) {
 
     return khInfoMapper.getKHInfoById(id);
   }

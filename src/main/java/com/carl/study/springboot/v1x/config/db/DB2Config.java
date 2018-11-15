@@ -1,5 +1,6 @@
 package com.carl.study.springboot.v1x.config.db;
 
+import org.apache.ibatis.io.VFS;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
@@ -40,15 +41,19 @@ public class DB2Config {
   @Bean("db2SqlSessionFactory")
   public SqlSessionFactory setSqlSessionFactory(@Qualifier("db2DataSource") DataSource dataSource) throws Exception {
 
+
     SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
     bean.setDataSource(dataSource);
 
-    //设置mapper.xml文件位置， 如果mapper.xml和mapper接口的名字和路径完全一致，可以省略该配置
+    //设置mapper.xml文件位置， 如果mapper.xml和mapper接口的名字和路径完全一致，可以省略该配置.
     //idea应其自身特性， 对src/main/java下的内容编译时，会自动忽略xml文件， 所以需要在pom中配置resources的filter，详见pom文件
 //    bean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath:com\\carl\\study\\springboot\\v1x\\mapper\\mapperDB2\\*.xml"));
 
-    // 配置bean的别名
-    bean.setTypeAliasesPackage("com.carl.study.springboot.v1x.model.model2");
+    //解决java -jar xxx.jar运行时，找不到bean的别名问题
+    VFS.addImplClass(SpringBootVFS.class);
+
+    // 配置bean的别名, 如果用到其他数据源的model， 则也需要将其配置在这里
+    bean.setTypeAliasesPackage("com.carl.study.springboot.v1x.model.model2,com.carl.study.springboot.v1x.model.model1");
 
     return bean.getObject();
   }
