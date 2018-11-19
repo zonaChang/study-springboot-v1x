@@ -2,7 +2,9 @@ package com.carl.study.springboot.v1x.controller;
 
 import com.carl.study.springboot.v1x.mapper.mapperDB1.StudentMapper;
 import com.carl.study.springboot.v1x.mapper.mapperDB2.KHInfoMapper;
+import com.carl.study.springboot.v1x.mapper.mapperDB3.UserMapper;
 import com.carl.study.springboot.v1x.model.model2.KHInfo;
+import com.carl.study.springboot.v1x.model.model3.User;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,6 +26,9 @@ public class DBController {
   @Autowired
   private KHInfoMapper khInfoMapper;
 
+  @Autowired
+  private UserMapper userMapper;
+
   @RequestMapping("db1")
   public Object getObjectByDB1Key(int id) {
 
@@ -41,5 +46,11 @@ public class DBController {
   public Object getObjectByDB2Key(int id) {
 
     return khInfoMapper.getKHInfoById(id);
+  }
+
+  @RequestMapping("db3mysql")
+  public User getUserByid(int id){
+
+    return userMapper.getUserById(id);
   }
 }

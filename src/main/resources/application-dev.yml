@@ -23,3 +23,9 @@ spring:
       url: jdbc:oracle:thin:@28.163.0.27:1521:devxfkhdb
       username: xfkh
       password: liulaoshi#haoren
+    #db3
+    db3:
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/boot1?useUnicode=true&characterEncoding=utf-8
+      username: root
+      password: root
